@@ -105,22 +105,8 @@ class DataScienceUtils:
                 print(df[col].value_counts(normalize=True), "\n")
 
         else:
-            # compute the joint distribution of the status, and each of the variables in cat_features
-            joint_dist = pd.pivot_table(df, index=target, columns=cat_features, aggfunc='size')
 
-            # drop the na columns
-            joint_dist = joint_dist.loc[1, :].dropna()
-
-            # sort values in descending order
-            joint_dist.sort_values(ascending=False, inplace=True)
-
-            # make a list of observed values
-            observed_values: list = [[value[i] for value in joint_dist.index.values] for i in range(0, len(cat_features))]
-
-            # make a list of pandas series using the list of observed values
-            observed_values_series: list = [pd.Series(observed_values[i]).value_counts(normalize=True) for i in
-                                            range(0, len(cat_features))]
-
+            #interate through the columns
             for i, col in enumerate(cat_features):
                 # compute a pivot table with values being the counts of each observation
                 table = pd.pivot_table(df, index=target, columns=col, aggfunc='size')
@@ -149,9 +135,10 @@ class DataScienceUtils:
                 plt.title(f"Bar plot of {title} by {target}")
 
                 # plot the barplot
-                sns.barplot(x=col, y="Proportion", hue=df[target].astype(str), data=proportions)
+                sns.barplot(x=col, y="Proportion", hue=target, data=proportions)
 
                 plt.show()
+
     @staticmethod
     def analyze_numerical_features(df: pd.DataFrame, numerical_vars: list, bivariate=False, target=None):
         # view summary statistics of numerical variables
@@ -236,6 +223,3 @@ class DataScienceUtils:
     def evaluate_model():
         pass
 
-    @staticmethod
-    def hello():
-        print("Hello World!")
