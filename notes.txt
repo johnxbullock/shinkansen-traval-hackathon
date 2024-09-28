@@ -1,0 +1,5 @@
+Evaluation metric:
+
+TP + TN / total observations.
+
+Predicting all ones gives 55% accuracy.
