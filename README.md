@@ -23,3 +23,6 @@ It is calculated as the total number of correct predictions (True Positives + Tr
 3. Decision Tree 
 4. Random Forest
 5. XGBoost
+
+## Insights : 
+Randon Forest model delivered the most accurate outputs 
