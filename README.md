@@ -3,8 +3,6 @@
 * The objective was to build a machine learning model to predict whether a passenger was satisfied with their overall travel experience. This required cleaning, validating, and combining the datasets, identifying key parameters influencing satisfaction, and building a predictive model that could accurately classify satisfaction levels.
 * Clean and process datasets for building the models. Multiple approaches were explored : NN Model, SVM , Decision Tree, Tuned Decision Tree, Random Forest. Using an iterative process, test different models and hyperparameters trying various approaches to maximize performance. The focus remained on maximizing model performance within the constraints of the evaluation metric.
 * The hackathon provided valuable experience in evaluating different approaches and selecting the best performing model under time constraints, resulting in a solution that outperformed baseline models. Highest acccuracy score of 94.3% was achieved
-
-![](Images/Dataset.png)
 <br><br>
 ## Dataset: 
 **Travel data** has information related to passengers and attributes related to the Shinkansen train, in which they traveled. 
